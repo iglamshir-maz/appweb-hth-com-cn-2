@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>华体会 · 连接热爱与体验</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f6f0;
+      font-family: system-ui, -apple-system, 'Noto Serif SC', 'Times New Roman', serif;
+      color: #2e2a24;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 820px;
+      width: 100%;
+    }
+
+    /* hero */
+    .hero {
+      text-align: center;
+      padding: 2.8rem 1rem 2rem;
+      border-bottom: 1px solid #dcd5c9;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #362f28;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #6b6258;
+      max-width: 580px;
+      margin: 0.5rem auto 0;
+      border-left: 4px solid #c7b9a6;
+      padding-left: 1.2rem;
+      text-align: left;
+      background: #f3ede6;
+      padding: 0.8rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* 优势区 卡片网格 */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0 2.8rem;
+    }
+
+    .card {
+      background: #ffffffea;
+      backdrop-filter: blur(1px);
+      padding: 1.6rem 1.2rem;
+      border-radius: 18px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.04);
+      border: 1px solid #ede6dc;
+      transition: transform 0.1s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #3a322b;
+      border-left: 3px solid #b8a186;
+      padding-left: 0.7rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4d453d;
+    }
+
+    /* 说明区 - 引用块 */
+    .insight-block {
+      background: #f2ebe2;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem;
+      margin: 2.8rem 0;
+      position: relative;
+    }
+
+    .insight-block::before {
+      content: "“";
+      font-size: 5rem;
+      line-height: 1;
+      color: #b8a186;
+      opacity: 0.25;
+      position: absolute;
+      top: -0.2rem;
+      left: 0.8rem;
+      font-family: Georgia, serif;
+    }
+
+    .insight-block p {
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      color: #3d352c;
+    }
+
+    .insight-block .source {
+      display: block;
+      text-align: right;
+      font-size: 0.9rem;
+      color: #83786b;
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+
+    /* 提示框 */
+    .tip-box {
+      background: #e5ddd2;
+      border-left: 6px solid #a68d72;
+      padding: 1.3rem 1.5rem;
+      border-radius: 12px;
+      margin: 2rem 0 2.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .tip-box .icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1.2;
+      color: #6f5e4b;
+    }
+
+    .tip-box .content {
+      font-size: 0.98rem;
+    }
+
+    .tip-box .content strong {
+      color: #362c22;
+    }
+
+    /* FAQ摘要 */
+    .faq-summary {
+      margin: 2.2rem 0;
+      border-top: 1px solid #d2c8ba;
+      padding-top: 2rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      color: #3d352c;
+    }
+
+    .faq-item {
+      padding: 1rem 0;
+      border-bottom: 1px dashed #d6cdbf;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #3a322b;
+      margin-bottom: 0.2rem;
+      font-size: 0.98rem;
+    }
+
+    .faq-a {
+      font-size: 0.92rem;
+      color: #5b5146;
+      padding-left: 0.6rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 3.5rem;
+      padding: 1.8rem 0 0.5rem;
+      text-align: center;
+      border-top: 1px solid #ddd3c4;
+      font-size: 0.95rem;
+      color: #5c5348;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: #5d4c39;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 0.5px;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover {
+      color: #1f1710;
+      text-decoration-color: #a68d72;
+    }
+
+    .inline-link {
+      color: #5d4c39;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d2c8ba;
+      margin: 1.2rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .insight-block {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .tip-box {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- hero -->
+    <section class="hero">
+      <h1>华体会</h1>
+      <div class="sub">
+        在寻常生活里，留一处专注的角落。让每一次参与都成为值得回味的片段。
+      </div>
+    </section>
+
+    <!-- 优势区：四个卡片 -->
+    <section class="advantages-grid">
+      <div class="card">
+        <h3>多元场景</h3>
+        <p>从休闲小聚到主题活动，覆盖日常与假日的不同节奏，总能找到契合的一页。</p>
+      </div>
+      <div class="card">
+        <h3>沉稳体验</h3>
+        <p>界面克制，信息清晰，不堆砌冗余动效，把注意力还给内容本身。</p>
+      </div>
+      <div class="card">
+        <h3>低门槛融入</h3>
+        <p>没有复杂规则，打开即用。无论是独处还是结伴，都能自然融入。</p>
+      </div>
+      <div class="card">
+        <h3>持续打磨</h3>
+        <p>设计团队持续优化细节，让每一次打开都更贴近使用习惯。</p>
+      </div>
+    </section>
+
+    <!-- 说明区：引用块 -->
+    <section class="insight-block">
+      <p>一种状态的切换，不必刻意准备。打开 <a href="https://appweb-hth.com.cn" class="inline-link">华体会</a> 就像推开一扇熟悉的门——里面没有陌生人，只有你想要的那份自在。</p>
+      <p>我们更在意的是：你在这里停留的几分钟，是否比刷过的那些页面多了一丝温度。</p>
+      <span class="source">—— 来自设计手记，2025</span>
+    </section>
+
+    <!-- 场景提示框 -->
+    <div class="tip-box">
+      <span class="icon">☕</span>
+      <div class="content">
+        <strong>一个小场景：</strong> 周末午后，窗外有风。<br>
+        打开 <a href="https://appweb-hth.com.cn" class="inline-link">华体会</a>，浏览最近的活动或简单翻翻推荐，不赶时间，也不被推送催促。这种“没目的”的访问，其实最接近放松本身。
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-summary">
+      <h2>常见问题 · 简短摘要</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">华体会适合什么样的人？</div>
+        <div class="faq-a">希望获得不嘈杂、有质感线上体验的用户，无论是否熟悉数字平台，都能轻松上手。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">是否需要注册或下载？</div>
+        <div class="faq-a">直接通过浏览器访问即可，部分进阶功能可依据页面引导自由选择，无强制流程。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">内容更新频率如何？</div>
+        <div class="faq-a">保持适度节奏，不刷屏，不制造信息焦虑。每周都会有新鲜但不泛滥的更新。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">遇到问题有反馈渠道吗？</div>
+        <div class="faq-a">页面底部设有联系方式，团队会定期阅读每一条消息，虽然无法秒回，但每一条都认真对待。</div>
+      </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+      <span>想要了解更多？前往 <a href="https://appweb-hth.com.cn">华体会</a> 亲自感受。</span>
+      <span style="font-size:0.85rem; color:#7c7165;">&copy; 2025 · 真实体验，从打开开始</span>
+    </div>
+
+    <!-- 隐藏的种子：仅用于变化，不可见 -->
+    <div style="display:none;">3ce11f49b75e3c40</div>
+
+  </div>
+</body>
+</html>
