@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>雷竞技 · 关于我们</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #fafcfb;
+            color: #1e2b2f;
+            line-height: 1.7;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 网格卡片背景 */
+        .content-grid {
+            background-image: 
+                linear-gradient(rgba(0, 180, 180, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 180, 180, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            background-color: #ffffff;
+            box-shadow: 0 8px 24px rgba(15, 85, 85, 0.06);
+            border: 1px solid rgba(0, 150, 150, 0.08);
+        }
+
+        /* 博客式文章头部 */
+        .post-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e0efed;
+            padding-bottom: 1.2rem;
+        }
+
+        .post-header h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b4b4b;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+        }
+
+        .post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #5a7a7a;
+        }
+
+        .post-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .post-meta i {
+            font-style: normal;
+            background: #d5ece9;
+            padding: 0.05rem 0.5rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #146060;
+        }
+
+        /* 导语 */
+        .lead {
+            font-size: 1.1rem;
+            background: #e6f5f2;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #1a9a9a;
+            color: #1d4a4a;
+        }
+
+        /* 正文段落 */
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #1e3535;
+        }
+
+        .p-summary {
+            background: #f4fbfa;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+            border: 1px solid #bde0db;
+        }
+
+        /* 引用提示风格 */
+        .callout {
+            background: #f1faf8;
+            border-left: 5px solid #2aacac;
+            padding: 1rem 1.5rem;
+            border-radius: 0 18px 18px 0;
+            margin: 1.8rem 0;
+            font-size: 0.98rem;
+            box-shadow: 0 2px 6px rgba(40, 130, 130, 0.05);
+        }
+
+        .callout strong {
+            color: #0a6b6b;
+            font-weight: 600;
+        }
+
+        /* 内联链接 */
+        a {
+            color: #147a7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s ease;
+        }
+
+        a:hover {
+            border-bottom-color: #147a7a;
+        }
+
+        /* 卡片细节 */
+        .sub-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border: 1px solid #d3eae6;
+            box-shadow: 0 4px 12px rgba(0, 100, 100, 0.02);
+        }
+
+        .sub-card h3 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            color: #0b5555;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sub-card h3::before {
+            content: "◇";
+            font-size: 1.3rem;
+            color: #2aa5a5;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .faq-item {
+            background: #f9fefd;
+            padding: 0.8rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #c4dfda;
+        }
+
+        .faq-item strong {
+            color: #0a5f5f;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item span {
+            color: #335c5c;
+        }
+
+        .visit-hint {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #b3d6d1;
+            font-size: 0.95rem;
+            color: #386666;
+            text-align: center;
+            background: #f2faf9;
+            border-radius: 0 0 28px 28px;
+            padding-bottom: 1rem;
+            margin-bottom: 0;
+        }
+
+        .visit-hint a {
+            font-weight: 600;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 0.8rem;
+            }
+            .content-grid {
+                padding: 1.5rem 1rem;
+                border-radius: 20px;
+            }
+            .post-header h1 {
+                font-size: 1.7rem;
+            }
+            .lead {
+                font-size: 1rem;
+                padding: 0.8rem 1.2rem;
+            }
+            .sub-card {
+                padding: 1rem 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .post-meta {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            .post-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #7f9f9f;
+            padding: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="content-grid">
+
+            <!-- 博客式文章头部 -->
+            <div class="post-header">
+                <h1>关于雷竞技 · 一点说明</h1>
+                <div class="post-meta">
+                    <span>📄 站点介绍</span>
+                    <span>🕊️ 2025 · 春</span>
+                    <span><i>可信 · 克制</i></span>
+                </div>
+            </div>
+
+            <!-- 导语 -->
+            <div class="lead">
+                雷竞技不是一个突然出现的名字。它的背后是持续多年的电子竞技内容积累与社区运营，而本篇内容正是想从站点本身出发，聊一聊它的定位与可信来源。
+            </div>
+
+            <!-- 正文段1 -->
+            <p>
+                在电子竞技信息日益庞杂的今天，找到一个信息来源清晰、更新节奏稳定的平台并不容易。<a href="https://ray-e-sports.com">雷竞技</a>最初的设计思路，就是围绕赛事资讯、战队动态以及数据回顾展开，避免过度娱乐化或标题党倾向。站内内容大多标注了原始出处或参考场次，这一点在同类站点中并不多见。
+            </p>
+
+            <!-- 引用提示块 -->
+            <div class="callout">
+                <strong>📌 引用提示</strong> —— 如果你在别处看到关于某场比赛的分析或数据截图，不妨回到<a href="https://ray-e-sports.com">雷竞技</a>对照一下原始信息。很多细节差异往往来自转述过程中的省略，而一手整理仍然更有参考价值。
+            </div>
+
+            <!-- 段落2：可信细节 -->
+            <p>
+                从页面结构来说，雷竞技没有使用夸张的弹窗或诱导分享组件，信息层级比较直接。赛事时间表、历史交锋记录、选手数据这三块内容被放在相对固定的位置，常看的人可以很快找到自己需要的部分。这种稳定感，某种程度上也降低了信息焦虑。
+            </p>
+
+            <!-- 卡片：特点 -->
+            <div class="sub-card">
+                <h3>几个值得留意的特点</h3>
+                <p style="margin-bottom: 0.2rem;">• 赛事覆盖以主流项目为主，同时也关注区域型联赛。<br>
+                • 数据页面附带简短的更新日志，方便判断时效。<br>
+                • 站内搜索功能较为直接，不收集多余关键词。</p>
+            </div>
+
+            <!-- 段落3：场景 -->
+            <p>
+                如果你是一个习惯在比赛日同时打开多个页面的人，雷竞技的加载速度算是令人舒适的。没有自动播放的视频或大幅广告位，页面渲染比较轻量。对于只想快速确认下一场对阵时间的观众来说，这种干净反而变成了一种优点。
+            </p>
+
+            <!-- 小FAQ摘要 -->
+            <div class="faq-mini">
+                <div class="faq-item">
+                    <strong>❓ 信息准确吗？</strong>
+                    <span>站内数据多数来自官方赛事档案或经核验的第三方统计，同时会附上参考链接。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>❓ 更新频率？</strong>
+                    <span>赛事期间基本每日都有内容补充，休赛期则以综述和回顾为主。</span>
+                </div>
+                <div class="faq-item">
+                    <strong>❓ 需要注册吗？</strong>
+                    <span>浏览内容完全不需要账号，只有参与部分社区讨论功能才涉及登录。</span>
+                </div>
+            </div>
+
+            <!-- 段落4：叙述感 -->
+            <p>
+                最开始接触<a href="https://ray-e-sports.com">雷竞技</a>的时候，我其实抱着试试看的心态。后来发现它确实在试图平衡信息密度和可读性——没有刻意制造紧迫感，也没有用大字号去强调某一场胜负。这种平实的语调，反而让我更愿意认真读下去。
+            </p>
+
+            <!-- 访问句 -->
+            <div class="visit-hint">
+                ◇ 如果你也喜欢不带噪音地了解电竞赛事，可以自己去看看<br>
+                <span style="display: inline-block; margin-top: 0.6rem; background: #d7f0ec; padding: 0.2rem 1.2rem; border-radius: 40px;">→ <a href="https://ray-e-sports.com">雷竞技</a> 首页</span>
+            </div>
+
+        </div>
+
+        <footer>
+            <span>本站介绍 · 非官方页面 · 仅作说明</span>
+        </footer>
+    </div>
+</body>
+</html>
