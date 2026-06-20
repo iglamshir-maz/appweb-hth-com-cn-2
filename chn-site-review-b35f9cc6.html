@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 leyu · 专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f5f0;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            color: #2c2825;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fdfcf9;
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.03);
+            border-radius: 32px;
+            padding: 2.5rem 2rem 3rem;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            text-align: center;
+            padding: 1.8rem 0 2.2rem;
+            border-bottom: 1px solid #e7dfd5;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #3d352e;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subhead {
+            font-size: 1.1rem;
+            color: #7c7065;
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto;
+            border-left: 3px solid #d6cbbc;
+            padding-left: 1.2rem;
+            text-align: left;
+        }
+
+        /* 背景说明 */
+        .background-note {
+            background: #efeae2;
+            padding: 1.6rem 2rem;
+            border-radius: 24px;
+            margin-bottom: 2.5rem;
+            font-size: 0.98rem;
+            color: #3f3730;
+            position: relative;
+        }
+
+        .background-note::before {
+            content: "📌";
+            margin-right: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .background-note strong {
+            font-weight: 600;
+            color: #2c241e;
+        }
+
+        /* 正文段落区域 */
+        .content-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .content-block {
+            background: #fdfcf9;
+            padding: 0 0.2rem;
+        }
+
+        .content-block h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            border-left: 5px solid #b7aa9a;
+            padding-left: 1rem;
+            margin-bottom: 0.8rem;
+            color: #3f352d;
+        }
+
+        .content-block p {
+            margin-bottom: 0.9rem;
+            text-indent: 2em;
+        }
+
+        .content-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用块 / 提示框 */
+        .inset-quote {
+            background: #f3efe8;
+            padding: 1.3rem 1.8rem;
+            border-radius: 20px;
+            margin: 1.5rem 0 0.5rem;
+            font-style: normal;
+            border: 1px solid #e4dbcf;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .inset-quote p {
+            text-indent: 0;
+            margin-bottom: 0.4rem;
+        }
+
+        .inset-quote p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inset-quote .label {
+            display: inline-block;
+            background: #d9cfc0;
+            color: #2f2a25;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            margin-bottom: 0.4rem;
+        }
+
+        /* 页尾访问提示 */
+        .footer-access {
+            border-top: 1px solid #e7dfd5;
+            padding-top: 2rem;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #5c5148;
+        }
+
+        .footer-access .access-line {
+            background: #f3eeea;
+            display: inline-block;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-size: 1rem;
+        }
+
+        .footer-access a {
+            color: #3d352e;
+            text-decoration: none;
+            border-bottom: 1px solid #b1a395;
+            padding-bottom: 0.1rem;
+            transition: border 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+
+        .footer-access a:hover {
+            border-bottom-color: #6b5c4e;
+            color: #5a4a3c;
+        }
+
+        .footer-note {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #8d8072;
+            letter-spacing: 0.3px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .page {
+                padding: 1.5rem 1rem 2rem;
+                border-radius: 20px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .subhead {
+                font-size: 1rem;
+                padding-left: 0.8rem;
+            }
+            .background-note {
+                padding: 1.2rem 1.2rem;
+                font-size: 0.92rem;
+            }
+            .content-block h2 {
+                font-size: 1.3rem;
+            }
+            .inset-quote {
+                padding: 1rem 1.2rem;
+            }
+            .footer-access .access-line {
+                padding: 0.4rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .content-block p {
+                text-indent: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero 横幅 -->
+    <div class="hero">
+        <h1>leyu · 站台</h1>
+        <div class="subhead">一份关于站点由来、背景与边界的说明</div>
+    </div>
+
+    <!-- 背景说明卡片 -->
+    <div class="background-note">
+        <strong>为什么会有这个页面？</strong> 在众多网络路径中，<a href="https://chn-site-leyu.com" style="color:#3d352e;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#b7aa9a;">leyu</a> 是一处安静的角落。本文试图以平实的语调，介绍其定位、内容方向以及访问时可能感兴趣的几点事实。不渲染，不粉饰，只陈述。
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="content-section">
+        <div class="content-block">
+            <h2>一、从何说起</h2>
+            <p>搭建一个网站的理由有很多，而 leyu 的起点更像是一种整理与归档。它并非追逐潮流的产品，也不承担高密度的资讯输出。从最初几篇记录到后来逐渐成型的栏目，整个过程都比较缓慢，甚至有些随意——但这也恰好让它保留了一种手记式的质感。</p>
+            <p>站内内容围绕几个固定的兴趣点展开：阅读札记、旅行片段、以及一些工具使用心得。没有广告，没有跳转弹窗，也没有什么需要注册才能查看的隐藏区域。访客看到的，几乎就是作者日常梳理的原本模样。</p>
+            <!-- 小提示框 -->
+            <div class="inset-quote">
+                <span class="label">一点补充</span>
+                <p>网站使用静态页面生成，托管在常规的 Pages 服务上。代码与文本都经过简单校验，但不代表信息永远准确。如果你发现过时的链接或明显的错误，欢迎邮件知会——页面底部可以找到联系方式（不过不是今天重点）。</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2>二、可信与边界</h2>
+            <p>谈到可信，我的理解很简单：不假装权威，也不刻意回避。leyu 上的每一条信息都标注了来源或体验背景。比如某篇关于地图工具的文章，会写明测试时的系统版本与区域设置；谈及某本书，也会注出版本和阅读时间。这些细节也许琐碎，但能帮助读者判断信息的适用环境。</p>
+            <p>另一方面，网站有明确的边界：不讨论时政、不发表未经证实的数据、不推荐任何需要付费或提供个人信息的第三方服务。这种自我约束不是出于谨慎，而是为了保持内容本身的干净。你可以在 leyu 里读到主观的体验，但不会遇到刻意的引导。</p>
+            <p>如果你只是单纯想看看这个站点的模样，直接访问 <a href="https://chn-site-leyu.com">leyu</a> 即可。首页会展示最近更新的几篇索引，风格与这里一致，没有多余的装饰。</p>
+        </div>
+
+        <div class="content-block">
+            <h2>三、场景与节奏</h2>
+            <p>什么样的场景适合打开 leyu？我的设想是：周末午后，一杯茶或咖啡，浏览器里开着一个安静的标签页。你不必从头读到尾，挑感兴趣的部分扫一眼，或者干脆把它当作一个偶尔想起来才去看看的角落。</p>
+            <p>网站更新频率不高，大约每月两到三次。没有邮件推送，没有社交账号同步。这种低频率反而让每次更新都有充分的准备时间，不会因为赶工而降低文字质量。如果你觉得这种节奏太慢，那它可能不太适合你；但如果你也喜欢不赶时间的内容，那 leyu 或许能对得上你的胃口。</p>
+
+            <!-- 第二个引用块，更像 FAQ 摘要 -->
+            <div class="inset-quote" style="margin-top:1.2rem;">
+                <span class="label">FAQ 摘要 · 简短版</span>
+                <p><strong>Q: 网站内容可以转载吗？</strong> 可以，注明出处与链接即可，无需额外申请。</p>
+                <p><strong>Q: 是否接受投稿或合作？</strong> 目前不接受。leyu 是一个单人维护的站点，暂不开放外部内容。</p>
+                <p><strong>Q: 网站会一直存在吗？</strong> 只要托管服务稳定、域名续费顺利，就会保持在线。没有关站计划。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-access">
+        <div class="access-line">
+            ✦ 若想亲自逛一逛，这里便是：<a href="https://chn-site-leyu.com">leyu</a> ✦
+        </div>
+        <div class="footer-note">
+            无弹窗 · 无会员 · 无跟踪脚本
+        </div>
+    </div>
+</div>
+</body>
+</html>
